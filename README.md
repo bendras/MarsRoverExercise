@@ -26,4 +26,6 @@ Prepare to extend programs to cope with new features or capabilities. It's quite
 0. Enter list of commands into command line, like: FRFL
 0. Press ENTER
 0. You will see current rover position on the map.
+0. Enter other commands...
+0. x will exit.
 
