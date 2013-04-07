@@ -47,7 +47,7 @@ namespace MarsRover.Worlds.Concrete
             return currentPosition;
         }
 
-        public bool CanMove(PositionVector newPosition)
+        public virtual bool CanMove(PositionVector newPosition)
         {
             return newPosition.X >= this.min && newPosition.X <= this.max && newPosition.Y >= this.min && newPosition.Y <= this.max;
         }

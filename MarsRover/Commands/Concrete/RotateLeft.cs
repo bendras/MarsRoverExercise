@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MarsRover.Commands.Concrete
+﻿namespace MarsRover.Commands.Concrete
 {
+    using System;
+    using MarsRover.Rovers;
+
     class RotateLeft : ICommand
     {
-        public void Execute()
+        public void Execute(IRover rover)
         {
-            throw new NotImplementedException();
+            rover.Rotate(false);
         }
     }
 }

@@ -46,5 +46,10 @@
 
             return new PositionVector(this.X, this.Y, (Direction)direction);
         }
+
+        public override string ToString()
+        {
+            return string.Format("({0}, {1}, {2})", this.X, this.Y, this.Direction);
+        }
     }
 }

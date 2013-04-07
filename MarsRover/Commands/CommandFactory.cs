@@ -7,15 +7,23 @@ using MarsRover.Commands.Concrete;
 
 namespace MarsRover.Commands
 {
-    class CommandFactory
+    public class CommandFactory
     {
-        ICommand CreateCommand(char commandParameter)
+        public ICommand CreateCommand(char commandParameter)
         {
             switch (commandParameter)
             {
                 case 'f':
                 case 'F':
                     return new MoveForward();
+
+                case 'l':
+                case 'L':
+                    return new RotateLeft();
+
+                case 'r':
+                case 'R':
+                    return new RotateRight();
 
                 default:
                     throw new Exception("Unknown command.");

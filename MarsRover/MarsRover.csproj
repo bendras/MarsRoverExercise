@@ -37,6 +37,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <RunCodeAnalysis>true</RunCodeAnalysis>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -51,6 +52,9 @@
     <StartupObject>MarsRover.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ninject">
+      <HintPath>packages\Ninject.3.0.2-unstable-9\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -65,6 +69,7 @@
     <Compile Include="Commands\Concrete\RotateLeft.cs" />
     <Compile Include="Commands\Concrete\MoveForward.cs" />
     <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="RoverController.cs" />
     <Compile Include="IRoverController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,11 +77,13 @@
     <Compile Include="Rovers\IRover.cs" />
     <Compile Include="Types\Direction.cs" />
     <Compile Include="Types\PositionVector.cs" />
+    <Compile Include="Worlds\Concrete\BigWorld.cs" />
     <Compile Include="Worlds\Concrete\SmallWorld.cs" />
     <Compile Include="Worlds\IWorld.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">

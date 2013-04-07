@@ -3,7 +3,7 @@
     using MarsRover.Types;
 
     /// <summary>Describes Rover moves.</summary>
-    interface IRover
+    public interface IRover
     {
         /// <summary>Describes rover position.</summary>
         PositionVector Position { get; }

@@ -1,16 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MarsRover.Commands.Concrete
+﻿namespace MarsRover.Commands.Concrete
 {
+    using System;
+    using MarsRover.Rovers;
+
     class MoveForward : ICommand
     {
-        public void Execute()
+        public void Execute(IRover rover)
         {
-            throw new NotImplementedException();
+            var success = rover.Move(true);
+
+            if (!success)
+            {
+                throw new Exception("Rover cannot move forward.");
+            }
         }
     }
 }

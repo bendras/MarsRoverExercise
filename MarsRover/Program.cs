@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using MarsRover.Commands;
 using MarsRover.Rovers;
+using MarsRover.Types;
+using MarsRover.Worlds;
+using Ninject;
 
 namespace MarsRover
 {
@@ -12,31 +15,37 @@ namespace MarsRover
     {
         static void Main(string[] args)
         {
-            string commandParameter = Console.ReadLine();
-            IRover rover = StartRover();
-            IRoverController roverController = CreateController(rover);
+            var container = InitializeContainer(args);
+            var roverController = container.Get<IRoverController>();
 
+            string commandParameter = Console.ReadLine();
             while (commandParameter != "x")
             {
-                ICommand[] commands = ParseCommands(commandParameter);
-                roverController.CommandRover(commands);
-                Console.Out.WriteLine(rover.Position);
+                string error = roverController.CommandRover(commandParameter.ToCharArray());
+                var position = roverController.GetPosition();
+
+                Console.Out.WriteLine(position + " " + error);
+                commandParameter = Console.ReadLine();
             }
         }
 
-        private static IRoverController CreateController(IRover rover)
+        private static IKernel InitializeContainer(string[] args)
         {
-            throw new NotImplementedException();
-        }
+            var container = new StandardKernel();
 
-        private static IRover StartRover()
-        {
-            return new Rovers.Concrete.LandRover(new MarsRover.Types.PositionVector(0, 0, Types.Direction.Notrh), new MarsRover.Worlds.Concrete.SmallWorld());
-        }
+            if (args != null && args.Length > 0)
+            {
+                container.Bind<IWorld>().To<Worlds.Concrete.BigWorld>();
+            }
+            else
+            {
+                container.Bind<IWorld>().To<Worlds.Concrete.SmallWorld>();
+            }
 
-        private static ICommand[] ParseCommands(string commandParameter)
-        {
-            throw new NotImplementedException();
+            container.Bind<IRover>().To<Rovers.Concrete.LandRover>().WithConstructorArgument("initialPosition", new PositionVector(0, 0, Direction.Notrh));
+            container.Bind<IRoverController>().To<RoverController>();
+
+            return container;
         }
     }
 }
