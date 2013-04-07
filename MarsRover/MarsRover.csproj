@@ -72,6 +72,8 @@
     <Compile Include="Rovers\IRover.cs" />
     <Compile Include="Types\Direction.cs" />
     <Compile Include="Types\PositionVector.cs" />
+    <Compile Include="Worlds\Concrete\SmallWorld.cs" />
+    <Compile Include="Worlds\IWorld.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

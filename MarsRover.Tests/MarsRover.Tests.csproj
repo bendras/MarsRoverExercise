@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SmallWorldTests.cs" />
     <Compile Include="LandRoverTests.cs" />
     <Compile Include="PositionVectorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

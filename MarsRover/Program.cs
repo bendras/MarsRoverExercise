@@ -31,7 +31,7 @@ namespace MarsRover
 
         private static IRover StartRover()
         {
-            return new Rovers.Concrete.LandRover(new MarsRover.Types.PositionVector(0, 0, Types.Direction.Notrh));
+            return new Rovers.Concrete.LandRover(new MarsRover.Types.PositionVector(0, 0, Types.Direction.Notrh), new MarsRover.Worlds.Concrete.SmallWorld());
         }
 
         private static ICommand[] ParseCommands(string commandParameter)

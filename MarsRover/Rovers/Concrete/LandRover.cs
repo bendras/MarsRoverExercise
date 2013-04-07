@@ -2,15 +2,19 @@
 {
     using System;
     using MarsRover.Types;
+using MarsRover.Worlds;
 
     /// <summary>Rover that runs on land.</summary>
     public class LandRover : IRover
     {
+        private readonly IWorld world;
+
         /// <summary>Initializes LandRover class.</summary>
         /// <param name="initialPosition">initial position.</param>
-        public LandRover(PositionVector initialPosition)
+        public LandRover(PositionVector initialPosition, IWorld world)
         {
             this.Position = initialPosition;
+            this.world = world;
         }
 
         /// <summary>Current position on the map.</summary>
@@ -30,41 +34,16 @@
         /// <returns>true if successful.</returns>
         public bool Move(bool forward)
         {
-            int x = 0;
-            int y = 0;
-
-            switch (this.Position.Direction)
+            if (forward)
             {
-                case Direction.Notrh:
-                    x = 1;
-                    break;
-                case Direction.East:
-                    y = 1;
-                    break;
-                case Direction.South:
-                    x = -1;
-                    break;
-                case Direction.West:
-                    y = -1;
-                    break;
-                default:
-                    throw new Exception("This direction is not recognised.");
+                var initialPosition = this.Position;
+                this.Position = this.world.Move(this.Position);
+                return !initialPosition.Equals(this.Position);
             }
-
-            var newPosition = new PositionVector(this.Position.X + x, this.Position.Y + y, this.Position.Direction);
-
-            if (IsRecognised(newPosition))
+            else
             {
-                this.Position = newPosition;
-                return true;
+                throw new NotImplementedException("Moving backwards is not implemented.");
             }
-
-            return false;
-        }
-
-        public static bool IsRecognised(PositionVector newPosition)
-        {
-            return newPosition.X >= 0 && newPosition.X <= 4 && newPosition.Y >= 0 && newPosition.Y <= 4;
         }
     }
 }
