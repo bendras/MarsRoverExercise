@@ -36,11 +36,11 @@
 
             switch (direction)
             {
-                case 0:
-                    direction = 4;
+                case -1:
+                    direction = 3;
                     break;
-                case 5:
-                    direction = 1;
+                case 4:
+                    direction = 0;
                     break;
             }
 
