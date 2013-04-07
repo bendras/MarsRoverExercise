@@ -19,3 +19,11 @@ The Rover starts at 0,0 facing North ("up" the grid). We need a program which wi
 Clean, readable, maintainable code.
 
 Prepare to extend programs to cope with new features or capabilities. It's quite uncommon to have truly perfect specifications for any program and this is no exception!
+
+## Program controls
+
+0. Start program. (Use command line parameters to change map)
+0. Enter list of commands into command line, like: FRFL
+0. Press ENTER
+0. You will see current rover position on the map.
+
