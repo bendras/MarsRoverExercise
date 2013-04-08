@@ -2,22 +2,20 @@
 //     Copyright (c) Paulius Zaliaduonis. All rights reserved.
 // </copyright>
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MarsRover.Types;
-
 namespace MarsRover.Worlds.Concrete
 {
+    using System;
+    using MarsRover.Types;
+
+    /// <summary>Implementation of a smaller world.</summary>
     public class SmallWorld : IWorld
     {
         private readonly int min = 0;
         private readonly int max = 4;
 
-        /// <summary>Calculates new position.</summary>
-        /// <returns>new position.</returns>
+        /// <summary>Calculates next coordinate moving forward from selected position.</summary>
+        /// <param name="currentPosition">The selected position.</param>
+        /// <returns>New position.</returns>
         public PositionVector Move(PositionVector currentPosition)
         {
             int x = 0;
@@ -51,6 +49,9 @@ namespace MarsRover.Worlds.Concrete
             return currentPosition;
         }
 
+        /// <summary>Indicated whether it is possible to go forward from location.</summary>
+        /// <param name="newPosition">Location to check.</param>
+        /// <returns><c>true</c> if going forward is allowed.</returns>
         public virtual bool CanMove(PositionVector newPosition)
         {
             return newPosition.X >= this.min && newPosition.X <= this.max && newPosition.Y >= this.min && newPosition.Y <= this.max;

@@ -16,6 +16,9 @@ namespace MarsRover
         private readonly IRover rover;
         private readonly CommandFactory commandFactory;
 
+        /// <summary>Initializes a new instance of the <see cref="RoverController" /> class.</summary>
+        /// <param name="rover"></param>
+        /// <param name="commandFactory"></param>
         public RoverController(IRover rover, CommandFactory commandFactory)
         {
             this.rover = rover;

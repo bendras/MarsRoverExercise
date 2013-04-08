@@ -15,13 +15,14 @@ namespace MarsRover.Rovers.Concrete
 
         /// <summary>Initializes a new instance of the <see cref="LandRover" /> class.</summary>
         /// <param name="initialPosition">initial position.</param>
+        /// <param name="world">World dependency. This should represent the world rover is in.</param>
         public LandRover(PositionVector initialPosition, IWorld world)
         {
             this.Position = initialPosition;
             this.world = world;
         }
 
-        /// <summary>Current position on the map.</summary>
+        /// <summary>Gets Current position on the map.</summary>
         public PositionVector Position { get; private set; }
 
         /// <summary>Rotates rover</summary>

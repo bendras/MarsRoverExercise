@@ -11,8 +11,11 @@ namespace MarsRover
     using MarsRover.Worlds;
     using Ninject;
 
+    /// <summary>Represents executable.</summary>
     public class Program
     {
+        /// <summary>Program entry point.</summary>
+        /// <param name="args">Console arguments.</param>
         public static void Main(string[] args)
         {
             var container = InitializeContainer(args);

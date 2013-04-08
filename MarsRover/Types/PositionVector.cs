@@ -20,13 +20,13 @@ namespace MarsRover.Types
             this.Direction = direction;
         }
 
-        /// <summary>X position in the world.</summary>
+        /// <summary>Gets X position in the world.</summary>
         public int X { get; private set; }
 
-        /// <summary>Y position in the world.</summary>
+        /// <summary>Gets Y position in the world.</summary>
         public int Y { get; private set; }
 
-        /// <summary>Direction in the world.</summary>
+        /// <summary>Gets Direction in the world.</summary>
         public Direction Direction { get; private set; }
 
         /// <summary>Transforms vector clockwise.</summary>
