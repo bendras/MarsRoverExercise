@@ -26,7 +26,7 @@ namespace MarsRover.Rovers.Concrete
         public PositionVector Position { get; private set; }
 
         /// <summary>Rotates rover</summary>
-        /// <param name="left">rotate right.</param>
+        /// <param name="right">rotate right.</param>
         /// <returns>true if successful.</returns>
         public bool Rotate(bool right)
         {

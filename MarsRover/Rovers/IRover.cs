@@ -9,11 +9,11 @@ namespace MarsRover.Rovers
     /// <summary>Describes Rover moves.</summary>
     public interface IRover
     {
-        /// <summary>Describes rover position.</summary>
+        /// <summary>Gets rover position.</summary>
         PositionVector Position { get; }
 
         /// <summary>Rotates rover</summary>
-        /// <param name="left">rotate right.</param>
+        /// <param name="right">rotate right.</param>
         /// <returns>true if successful.</returns>
         bool Rotate(bool right);
 

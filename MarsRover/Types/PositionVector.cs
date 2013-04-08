@@ -51,6 +51,8 @@ namespace MarsRover.Types
             return new PositionVector(this.X, this.Y, (Direction)direction);
         }
 
+        /// <summary>Describes position in text.</summary>
+        /// <returns>Position string.</returns>
         public override string ToString()
         {
             return string.Format("({0}, {1}, {2})", this.X, this.Y, this.Direction);
