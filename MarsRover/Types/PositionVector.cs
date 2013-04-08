@@ -1,11 +1,15 @@
-﻿namespace MarsRover.Types
+﻿// <copyright file="PositionVector.cs" company="Paulius Zaliaduonis">
+//     Copyright (c) Paulius Zaliaduonis. All rights reserved.
+// </copyright>
+
+namespace MarsRover.Types
 {
     using System;
 
     /// <summary>Describes Rover position and direction in the world.</summary>
     public struct PositionVector
     {
-        /// <summary>Initializes Rover position class.</summary>
+        /// <summary>Initializes a new instance of the <see cref="PositionVector" /> struct.</summary>
         /// <param name="x">X coordinate.</param>
         /// <param name="y">Y coordinate.</param>
         /// <param name="direction">Direction rover faces.</param>

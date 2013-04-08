@@ -1,19 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MarsRover.Commands;
-using MarsRover.Rovers;
-using MarsRover.Types;
-using MarsRover.Worlds;
-using Ninject;
+﻿// <copyright file="Program.cs" company="Paulius Zaliaduonis">
+//     Copyright (c) Paulius Zaliaduonis. All rights reserved.
+// </copyright>
 
 namespace MarsRover
 {
-    class Program
+    using System;
+    using MarsRover.Commands;
+    using MarsRover.Rovers;
+    using MarsRover.Types;
+    using MarsRover.Worlds;
+    using Ninject;
+
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             var container = InitializeContainer(args);
             var roverController = container.Get<IRoverController>();

@@ -1,4 +1,8 @@
-﻿using System;
+﻿// <copyright file="BigWorld.cs" company="Paulius Zaliaduonis">
+//     Copyright (c) Paulius Zaliaduonis. All rights reserved.
+// </copyright>
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

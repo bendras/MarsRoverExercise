@@ -1,4 +1,8 @@
-﻿namespace MarsRover.Worlds
+﻿// <copyright file="IWorld.cs" company="Paulius Zaliaduonis">
+//     Copyright (c) Paulius Zaliaduonis. All rights reserved.
+// </copyright>
+
+namespace MarsRover.Worlds
 {
     using MarsRover.Types;
 

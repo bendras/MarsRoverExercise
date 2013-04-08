@@ -1,4 +1,8 @@
-﻿using System;
+﻿// <copyright file="SmallWorld.cs" company="Paulius Zaliaduonis">
+//     Copyright (c) Paulius Zaliaduonis. All rights reserved.
+// </copyright>
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,7 +43,7 @@ namespace MarsRover.Worlds.Concrete
 
             var newPosition = new PositionVector(currentPosition.X + x, currentPosition.Y + y, currentPosition.Direction);
 
-            if (CanMove(newPosition))
+            if (this.CanMove(newPosition))
             {
                 return newPosition;
             }

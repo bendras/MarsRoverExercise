@@ -1,15 +1,19 @@
-﻿namespace MarsRover.Rovers.Concrete
+﻿// <copyright file="LandRover.cs" company="Paulius Zaliaduonis">
+//     Copyright (c) Paulius Zaliaduonis. All rights reserved.
+// </copyright>
+
+namespace MarsRover.Rovers.Concrete
 {
     using System;
     using MarsRover.Types;
-using MarsRover.Worlds;
+    using MarsRover.Worlds;
 
     /// <summary>Rover that runs on land.</summary>
     public class LandRover : IRover
     {
         private readonly IWorld world;
 
-        /// <summary>Initializes LandRover class.</summary>
+        /// <summary>Initializes a new instance of the <see cref="LandRover" /> class.</summary>
         /// <param name="initialPosition">initial position.</param>
         public LandRover(PositionVector initialPosition, IWorld world)
         {

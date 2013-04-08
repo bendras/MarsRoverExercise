@@ -1,4 +1,8 @@
-﻿namespace MarsRover
+﻿// <copyright file="IRoverController.cs" company="Paulius Zaliaduonis">
+//     Copyright (c) Paulius Zaliaduonis. All rights reserved.
+// </copyright>
+
+namespace MarsRover
 {
     using MarsRover.Types;
 
